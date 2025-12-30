@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scitech Academy - Sekolah Robotik & Coding Indonesia</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        scitech: {
+                            blue: '#0056D2', // Royal Blue
+                            dark: '#003ea1',
+                            orange: '#FF6B00', // Energetic Orange
+                            light: '#F3F4F6'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Open Sans', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 86, 210, 0.85), rgba(0, 62, 161, 0.9)), url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-700 antialiased">
+
+    <nav class="bg-white shadow-md fixed w-full z-50" x-data="{ open: false }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <div class="w-10 h-10 bg-scitech-blue rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <span class="font-heading font-bold text-2xl text-scitech-blue tracking-tighter">SCITECH<span class="text-scitech-orange">ACADEMY</span></span>
+                </div>
+
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="font-semibold hover:text-scitech-blue transition">Beranda</a>
+                    <a href="#program" class="font-semibold hover:text-scitech-blue transition">Program</a>
+                    <a href="#sekolah" class="font-semibold text-scitech-blue hover:text-scitech-orange transition">Kerja Sama Sekolah</a>
+                    <a href="#portofolio" class="font-semibold hover:text-scitech-blue transition">Prestasi</a>
+                    <a href="https://wa.me/6287877955526?text=Halo%20Scitech,%20saya%20ingin%20daftar%20trial%20class" target="_blank" class="bg-scitech-orange hover:bg-orange-600 text-white px-5 py-2.5 rounded-full font-bold shadow-lg transition transform hover:scale-105">
+                        Daftar Trial Gratis
+                    </a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button @click="open = !open" class="text-gray-600 hover:text-scitech-blue focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div x-show="open" class="md:hidden bg-white border-t" style="display: none;">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100">Beranda</a>
+                <a href="#program" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100">Program</a>
+                <a href="#sekolah" class="block px-3 py-2 rounded-md text-base font-medium text-scitech-blue hover:bg-gray-100">Kerja Sama Sekolah</a>
+                <a href="#portofolio" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100">Prestasi</a>
+                <a href="https://wa.me/6287877955526" class="block px-3 py-2 rounded-md text-base font-bold text-scitech-orange hover:bg-gray-100">Daftar Trial Class</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-bg h-screen flex items-center justify-center text-center px-4 pt-16">
+        <div class="max-w-4xl mx-auto text-white">
+            <span class="inline-block bg-scitech-orange text-xs font-bold px-3 py-1 rounded-full mb-4 tracking-wide uppercase animate-bounce">
+                🚀 Ciptakan Inovator Masa Depan
+            </span>
+            <h1 class="font-heading text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                Siapkan Anak Anda Menjadi <br> Juara Teknologi
+            </h1>
+            <p class="text-lg md:text-xl mb-8 text-gray-100 max-w-2xl mx-auto font-light">
+                Scitech Academy menghadirkan kurikulum Robotics, Coding, dan STEM terbaik. Belajar seru, hasil nyata, dan berprestasi.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="https://wa.me/6287877955526?text=Halo,%20saya%20mau%20daftar%20trial%20class" target="_blank" class="bg-scitech-orange hover:bg-orange-600 text-white text-lg font-bold px-8 py-4 rounded-full shadow-xl transition transform hover:scale-105">
+                    Daftar Trial Gratis
+                </a>
+                <a href="#sekolah" class="bg-transparent border-2 border-white hover:bg-white hover:text-scitech-blue text-white text-lg font-bold px-8 py-4 rounded-full transition">
+                    Program Sekolah <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            <p class="mt-4 text-sm text-gray-300 opacity-90">*Slot terbatas. Tanpa biaya pendaftaran awal.</p>
+        </div>
+    </section>
+
+    <section class="bg-gray-900 text-white py-12 border-b-4 border-scitech-orange">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <div class="text-4xl font-heading font-bold text-scitech-orange mb-1">500+</div>
+                <div class="text-sm text-gray-400">Siswa Dibina</div>
+            </div>
+            <div>
+                <div class="text-4xl font-heading font-bold text-scitech-orange mb-1">15+</div>
+                <div class="text-sm text-gray-400">Sekolah Mitra</div>
+            </div>
+            <div>
+                <div class="text-4xl font-heading font-bold text-scitech-orange mb-1">80+</div>
+                <div class="text-sm text-gray-400">Piala & Medali</div>
+            </div>
+            <div>
+                <div class="text-4xl font-heading font-bold text-scitech-orange mb-1">3</div>
+                <div class="text-sm text-gray-400">Tahun Pengalaman</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="program" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-scitech-blue mb-4">Pilihan Program Belajar</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Kurikulum berjenjang dari pemula hingga mahir, disesuaikan dengan usia dan teknologi terkini.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition border-t-4 border-green-500 group relative">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-14 h-14 bg-green-100 rounded-lg flex items-center justify-center text-green-600">
+                            <i class="fa-solid fa-shapes text-2xl"></i>
+                        </div>
+                        <span class="bg-gray-100 text-gray-600 text-xs font-bold px-3 py-1 rounded-full h-fit">Usia 4 - 6 Tahun</span>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold mb-3">Beginner</h3>
+                    <p class="text-gray-500 mb-6 text-sm">
+                        Program pengenalan dasar konstruksi. <br>
+                        <strong>16 Pertemuan (4 bulan)</strong> • 90 Menit/Sesi
+                    </p>
+                    <ul class="text-sm text-gray-600 mb-6 space-y-2">
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Belajar Bricks & Lego</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Pengenalan Actuator</li>
+                    </ul>
+                    <a href="https://wa.me/6287877955526?text=Halo%20saya%20tertarik%20kelas%20Beginner" class="text-scitech-blue font-bold hover:text-scitech-orange text-sm">Info Lengkap →</a>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition border-t-4 border-green-500 group relative">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-14 h-14 bg-green-100 rounded-lg flex items-center justify-center text-green-600">
+                            <i class="fa-solid fa-robot text-2xl"></i>
+                        </div>
+                        <span class="bg-gray-100 text-gray-600 text-xs font-bold px-3 py-1 rounded-full h-fit">Usia 6 - 8 Tahun</span>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold mb-3">Basic 1</h3>
+                    <p class="text-gray-500 mb-6 text-sm">
+                        Membangun robot sederhana dengan sensor. <br>
+                        <strong>16 Pertemuan (4 bulan)</strong> • 90 Menit/Sesi
+                    </p>
+                    <ul class="text-sm text-gray-600 mb-6 space-y-2">
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Bricks & Lego</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Actuator & Sensor</li>
+                    </ul>
+                    <a href="https://wa.me/6287877955526?text=Halo%20saya%20tertarik%20kelas%20Basic%201" class="text-scitech-blue font-bold hover:text-scitech-orange text-sm">Info Lengkap →</a>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition border-t-4 border-scitech-blue group relative">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center text-scitech-blue">
+                            <i class="fa-solid fa-laptop-code text-2xl"></i>
+                        </div>
+                        <span class="bg-gray-100 text-gray-600 text-xs font-bold px-3 py-1 rounded-full h-fit">Usia 8 - 10 Tahun</span>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold mb-3">Basic 2</h3>
+                    <p class="text-gray-500 mb-6 text-sm">
+                        Kombinasi merakit robot dan coding dasar. <br>
+                        <strong>16 Pertemuan (4 bulan)</strong> • 90 Menit/Sesi
+                    </p>
+                    <ul class="text-sm text-gray-600 mb-6 space-y-2">
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Coding & Lego</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Sensor & Actuator</li>
+                    </ul>
+                    <a href="https://wa.me/6287877955526?text=Halo%20saya%20tertarik%20kelas%20Basic%202" class="text-scitech-blue font-bold hover:text-scitech-orange text-sm">Info Lengkap →</a>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition border-t-4 border-scitech-blue group relative">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center text-scitech-blue">
+                            <i class="fa-solid fa-microchip text-2xl"></i>
+                        </div>
+                        <span class="bg-gray-100 text-gray-600 text-xs font-bold px-3 py-1 rounded-full h-fit">Usia 10 - 12 Tahun</span>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold mb-3">Basic 3</h3>
+                    <p class="text-gray-500 mb-6 text-sm">
+                        Pemrograman mikrokontroler Arduino. <br>
+                        <strong>16 Pertemuan (4 bulan)</strong> • 90 Menit/Sesi
+                    </p>
+                    <ul class="text-sm text-gray-600 mb-6 space-y-2">
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Pictoblox & Arduino</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Advanced Sensor</li>
+                    </ul>
+                    <a href="https://wa.me/6287877955526?text=Halo%20saya%20tertarik%20kelas%20Basic%203" class="text-scitech-blue font-bold hover:text-scitech-orange text-sm">Info Lengkap →</a>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition border-t-4 border-yellow-400 group relative">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-14 h-14 bg-yellow-100 rounded-lg flex items-center justify-center text-yellow-600">
+                            <i class="fa-solid fa-wifi text-2xl"></i>
+                        </div>
+                        <span class="bg-gray-100 text-gray-600 text-xs font-bold px-3 py-1 rounded-full h-fit">Usia 12 - 15 Tahun</span>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold mb-3">Intermediate</h3>
+                    <p class="text-gray-500 mb-6 text-sm">
+                        Membuat perangkat pintar berbasis IoT. <br>
+                        <strong>16 Pertemuan (4 bulan)</strong> • 90 Menit/Sesi
+                    </p>
+                    <ul class="text-sm text-gray-600 mb-6 space-y-2">
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>ESP32 & IoT</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Actuator Control</li>
+                    </ul>
+                    <a href="https://wa.me/6287877955526?text=Halo%20saya%20tertarik%20kelas%20Intermediate" class="text-scitech-blue font-bold hover:text-scitech-orange text-sm">Info Lengkap →</a>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition border-t-4 border-red-500 group relative">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-14 h-14 bg-red-100 rounded-lg flex items-center justify-center text-red-600">
+                            <i class="fa-solid fa-network-wired text-2xl"></i>
+                        </div>
+                        <span class="bg-gray-100 text-gray-600 text-xs font-bold px-3 py-1 rounded-full h-fit">Usia 15 - 18 Tahun</span>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold mb-3">Expert</h3>
+                    <p class="text-gray-500 mb-6 text-sm">
+                        Sistem IoT tingkat lanjut dan integrasi sistem. <br>
+                        <strong>16 Pertemuan (4 bulan)</strong> • 90 Menit/Sesi
+                    </p>
+                    <ul class="text-sm text-gray-600 mb-6 space-y-2">
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>IoT Advance</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Complex Sensors</li>
+                    </ul>
+                    <a href="https://wa.me/6287877955526?text=Halo%20saya%20tertarik%20kelas%20Expert" class="text-scitech-blue font-bold hover:text-scitech-orange text-sm">Info Lengkap →</a>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition border-t-4 border-scitech-orange group relative">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-14 h-14 bg-orange-100 rounded-lg flex items-center justify-center text-scitech-orange">
+                            <i class="fa-solid fa-code text-2xl"></i>
+                        </div>
+                        <span class="bg-gray-100 text-gray-600 text-xs font-bold px-3 py-1 rounded-full h-fit">Usia 7 - 17 Tahun</span>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold mb-3">Coding for Kids</h3>
+                    <p class="text-gray-500 mb-6 text-sm">Belajar logika pemrograman visual (Scratch) hingga teks (Roblox Studio) untuk membuat game.</p>
+                    <ul class="text-sm text-gray-600 mb-6 space-y-2">
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Game Creation</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Logic Thinking</li>
+                    </ul>
+                    <a href="#" class="text-scitech-blue font-bold hover:text-scitech-orange text-sm">Info Lengkap →</a>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition border-t-4 border-scitech-blue group relative">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center text-scitech-blue">
+                            <i class="fa-solid fa-brain text-2xl"></i>
+                        </div>
+                        <span class="bg-gray-100 text-gray-600 text-xs font-bold px-3 py-1 rounded-full h-fit">Usia 12+ Tahun</span>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold mb-3">AI & Machine Learning</h3>
+                    <p class="text-gray-500 mb-6 text-sm">Pengenalan kecerdasan buatan dasar. Melatih komputer mengenali gambar dan suara.</p>
+                    <ul class="text-sm text-gray-600 mb-6 space-y-2">
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Face Recognition</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Voice Assistant</li>
+                    </ul>
+                    <a href="#" class="text-scitech-blue font-bold hover:text-scitech-orange text-sm">Info Lengkap →</a>
+                </div>
+
+                <div class="bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-xl transition border-t-4 border-scitech-orange group relative text-white">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-14 h-14 bg-gray-700 rounded-lg flex items-center justify-center text-scitech-orange group-hover:bg-scitech-orange group-hover:text-white transition">
+                            <i class="fa-solid fa-trophy text-2xl"></i>
+                        </div>
+                        <span class="bg-gray-700 text-gray-300 text-xs font-bold px-3 py-1 rounded-full h-fit">Seleksi</span>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold mb-3">Competition Class</h3>
+                    <p class="text-gray-300 mb-6 text-sm">Kelas intensif persiapan lomba nasional & internasional. Fokus strategi dan mental juara.</p>
+                    <ul class="text-sm text-gray-300 mb-6 space-y-2">
+                        <li><i class="fa-solid fa-check text-scitech-orange mr-2"></i>Karantina Lomba</li>
+                        <li><i class="fa-solid fa-check text-scitech-orange mr-2"></i>Mentoring Khusus</li>
+                    </ul>
+                    <a href="#" class="text-scitech-orange font-bold hover:text-white text-sm">Info Lengkap →</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="sekolah" class="py-20 bg-blue-50 relative overflow-hidden">
+    <div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-blue-100 rounded-full blur-3xl opacity-50"></div>
+
+    <div class="max-w-7xl mx-auto px-4 relative z-10">
+        <div class="text-center mb-10">
+            <span class="text-scitech-blue font-extrabold tracking-widest uppercase text-xl md:text-2xl block">
+                Untuk Sekolah & Yayasan
+            </span>
+        </div>
+
+        <div class="flex flex-col lg:flex-row gap-12 items-center">
+            <div class="lg:w-1/2">
+                <h2 class="font-heading text-3xl md:text-5xl font-bold text-gray-800 mb-6 mt-2">
+                    Jadikan Sekolah Anda Pusat Unggulan <span class="text-scitech-blue">STEM & Robotik</span>
+                </h2>
+                <p class="text-gray-600 mb-6 text-lg">
+                    Kami membantu sekolah menyelenggarakan kegiatan Intrakurikuler dan Ekstrakurikuler tanpa perlu investasi alat yang mahal. Terima beres, terima prestasi.
+                </p>
+                
+                <div class="space-y-4 mb-8">
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-scitech-orange text-xl mt-1 mr-3"></i>
+                        <div>
+                            <h4 class="font-bold">Kurikulum & Silabus Lengkap</h4>
+                            <p class="text-sm text-gray-500">RPP, Modul, dan Rubrik Penilaian Terstandar.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-scitech-orange text-xl mt-1 mr-3"></i>
+                        <div>
+                            <h4 class="font-bold">Mentor Profesional</h4>
+                            <p class="text-sm text-gray-500">Pengajar tersertifikasi dari Scitech Academy.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-scitech-orange text-xl mt-1 mr-3"></i>
+                        <div>
+                            <h4 class="font-bold">Peralatan Dipinjamkan</h4>
+                            <p class="text-sm text-gray-500">Sekolah tidak perlu beli alat.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-4">
+                    <a href="https://wa.me/6287877955526?text=Halo%20Scitech,%20saya%20dari%20sekolah..." class="bg-scitech-blue hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition">
+                        <i class="fa-brands fa-whatsapp mr-2"></i> Jadwalkan Presentasi
+                    </a>
+                    <button class="bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 font-bold py-3 px-6 rounded-lg transition">
+                        <i class="fa-solid fa-file-pdf mr-2"></i> Unduh Proposal
+                    </button>
+                </div>
+            </div>
+            
+            <div class="lg:w-1/2 bg-white p-2 rounded-2xl shadow-2xl rotate-2 hover:rotate-0 transition duration-500">
+               <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop" alt="Kegiatan Robotik Sekolah" class="rounded-xl w-full">
+               <div class="p-6">
+                   <h3 class="font-bold text-xl mb-2">Alur Kerja Sama</h3>
+                   <div class="flex justify-between text-center text-xs text-gray-500 mt-4">
+                       <div class="flex flex-col items-center">
+                           <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-scitech-blue mb-2">1</div>
+                           Assessment
+                       </div>
+                       <div class="flex flex-col items-center">
+                           <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-scitech-blue mb-2">2</div>
+                           Demo/MoU
+                       </div>
+                       <div class="flex flex-col items-center">
+                           <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-scitech-blue mb-2">3</div>
+                           Implementasi
+                       </div>
+                       <div class="flex flex-col items-center">
+                           <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center text-green-600 mb-2">4</div>
+                           Report
+                       </div>
+                   </div>
+               </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="portofolio" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4">Portofolio Juara</h2>
+                <p class="text-gray-600">Bukti kualitas kurikulum kami di kancah nasional dan internasional.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+                <div class="bg-gray-50 rounded-xl p-6 border-l-4 border-yellow-400">
+                    <div class="text-yellow-500 text-sm font-bold mb-1">JUARA 1 | GOLD</div>
+                    <h4 class="font-bold text-lg mb-1">Scratch Game</h4>
+                    <p class="text-gray-500 text-sm">International Robotic Competition (Malaysia 2025)</p>
+                </div>
+                <div class="bg-gray-50 rounded-xl p-6 border-l-4 border-gray-400">
+                    <div class="text-gray-500 text-sm font-bold mb-1">JUARA 1 | GOLD</div>
+                    <h4 class="font-bold text-lg mb-1">Line Follower</h4>
+                    <p class="text-gray-500 text-sm">International Robotic Competition (Malaysia 2025)</p>
+                </div>
+                <div class="bg-gray-50 rounded-xl p-6 border-l-4 border-orange-500">
+                    <div class="text-orange-500 text-sm font-bold mb-1">JUARA UMUM</div>
+                    <h4 class="font-bold text-lg mb-1">Pemenang Terbanyak</h4>
+                    <p class="text-gray-500 text-sm">Sukabumi Robotic Competition (2025)</p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl p-6 border-l-4 border-yellow-500">
+                    <div class="text-blue-500 text-sm font-bold mb-1">Juara Lainnya</div>
+                    <h4 class="font-bold text-lg mb-1">80+ Juara Lainnya</h4>
+                    <p class="text-gray-500 text-sm">Nasional/Internasional>
+                </div>
+            </div>
+
+            <div class="border-t pt-10 mt-16">
+    <p class="text-center text-gray-400 text-sm mb-10 uppercase tracking-[0.2em] font-semibold transition-all duration-700 hover:tracking-[0.3em] cursor-default">
+        Dipercaya oleh sekolah & mitra
+    </p>
+    
+    <div class="flex flex-wrap justify-center gap-8 md:gap-16 items-center">
+        
+        <div class="group relative transition-all duration-500 hover:scale-110 transform hover:-translate-y-3">
+            <img src="logo/foto1.png" alt="Mitra 1" class="h-16 w-auto object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500">
+            <div class="absolute inset-0 bg-blue-400/10 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+        </div>
+
+        <div class="group relative transition-all duration-500 hover:scale-110 transform hover:-translate-y-3">
+            <img src="logo/foto2.png" alt="Mitra 2" class="h-16 w-auto object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500">
+            <div class="absolute inset-0 bg-blue-400/10 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+        </div>
+
+        <div class="group relative transition-all duration-500 hover:scale-110 transform hover:-translate-y-3">
+            <img src="logo/foto3.png" alt="Mitra 3" class="h-16 w-auto object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500">
+            <div class="absolute inset-0 bg-blue-400/10 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+        </div>
+
+        <div class="group relative transition-all duration-500 hover:scale-110 transform hover:-translate-y-3">
+            <img src="logo/foto4.png" alt="Mitra 4" class="h-16 w-auto object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500">
+            <div class="absolute inset-0 bg-blue-400/10 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+        </div>
+
+        <div class="group relative transition-all duration-500 hover:scale-110 transform hover:-translate-y-3">
+            <img src="logo/foto5.png" alt="Mitra 5" class="h-16 w-auto object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500">
+            <div class="absolute inset-0 bg-blue-400/10 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+        </div>
+        <div class="group relative transition-all duration-500 hover:scale-110 transform hover:-translate-y-3">
+            <img src="logo/foto6.png" alt="Mitra 6" class="h-16 w-auto object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500">
+            <div class="absolute inset-0 bg-blue-400/10 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+        </div>
+
+    </div>
+</div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-md relative">
+                    <i class="fa-solid fa-quote-right absolute top-6 right-6 text-gray-200 text-4xl"></i>
+                    <p class="text-gray-600 italic mb-6 relative z-10">"Awalnya anak saya kecanduan game, sekarang malah bikin game sendiri lewat kelas Coding di Scitech. Nilai matematikanya juga ikut naik!"</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                        <div>
+                            <h5 class="font-bold text-sm">Ibu Ani</h5>
+                            <p class="text-xs text-gray-500">Orang Tua Siswa</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-md relative">
+                    <i class="fa-solid fa-quote-right absolute top-6 right-6 text-gray-200 text-4xl"></i>
+                    <p class="text-gray-600 italic mb-6 relative z-10">"Kerja sama ekskul dengan Scitech sangat profesional. Mentornya disiplin, RPP jelas, dan sekolah kami langsung bawa pulang piala di tahun pertama."</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                        <div>
+                            <h5 class="font-bold text-sm">Bpk. Budi</h5>
+                            <p class="text-xs text-gray-500">Kepala Sekolah SD Harapan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="max-w-3xl mx-auto px-4" x-data="{ selected: null }">
+            <h2 class="font-heading text-3xl font-bold text-center mb-10">Pertanyaan Sering Diajukan</h2>
+            
+            <div class="space-y-4">
+                <div class="border rounded-lg p-4">
+                    <button @click="selected !== 1 ? selected = 1 : selected = null" class="flex justify-between w-full font-bold text-left">
+                        <span>Apakah pemula boleh ikut?</span>
+                        <i class="fa-solid" :class="selected === 1 ? 'fa-minus' : 'fa-plus'"></i>
+                    </button>
+                    <div x-show="selected === 1" class="mt-3 text-gray-600 text-sm">
+                        Tentu! Kami memiliki level Beginner yang dirancang khusus untuk anak yang belum pernah belajar coding atau robotik sebelumnya.
+                    </div>
+                </div>
+
+                <div class="border rounded-lg p-4">
+                    <button @click="selected !== 2 ? selected = 2 : selected = null" class="flex justify-between w-full font-bold text-left">
+                        <span>Usia berapa bisa mulai?</span>
+                        <i class="fa-solid" :class="selected === 2 ? 'fa-minus' : 'fa-plus'"></i>
+                    </button>
+                    <div x-show="selected === 2" class="mt-3 text-gray-600 text-sm">
+                        Anak-anak bisa mulai belajar sejak usia 5 tahun (TK B) dengan materi logika dasar menggunakan mainan edukatif.
+                    </div>
+                </div>
+
+                <div class="border rounded-lg p-4">
+                    <button @click="selected !== 3 ? selected = 3 : selected = null" class="flex justify-between w-full font-bold text-left">
+                        <span>Apakah alat harus beli?</span>
+                        <i class="fa-solid" :class="selected === 3 ? 'fa-minus' : 'fa-plus'"></i>
+                    </button>
+                    <div x-show="selected === 3" class="mt-3 text-gray-600 text-sm">
+                        Untuk kelas offline di center atau sekolah, alat dipinjamkan. Untuk kelas online, disarankan membeli atau menyewa.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-scitech-blue text-white py-16 text-center px-4">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4">Jangan Sampai Anak Tertinggal di Era Digital</h2>
+        <p class="mb-8 max-w-2xl mx-auto text-blue-100">Bergabunglah dengan ribuan siswa lain yang sudah menciptakan masa depan mereka hari ini.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="https://wa.me/6287877955526" class="bg-scitech-orange hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:scale-105">
+                Konsultasi Program
+            </a>
+            <a href="#program" class="bg-transparent border border-white hover:bg-white hover:text-scitech-blue text-white font-bold py-3 px-8 rounded-full transition">
+                Lihat Jadwal Kelas
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-300 py-12 text-sm">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <div class="flex items-center gap-2 mb-4 text-white">
+                    <i class="fa-solid fa-microchip text-scitech-blue text-xl"></i>
+                    <span class="font-heading font-bold text-lg">SCITECH ACADEMY</span>
+                </div>
+                <p class="mb-4">Platform edukasi STEM terintegrasi untuk mencetak inovator masa depan.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-white"><i class="fa-brands fa-instagram text-xl"></i></a>
+                    <a href="#" class="hover:text-white"><i class="fa-brands fa-facebook text-xl"></i></a>
+                    <a href="#" class="hover:text-white"><i class="fa-brands fa-youtube text-xl"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-4">Program</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-scitech-orange">Robotics</a></li>
+                    <li><a href="#" class="hover:text-scitech-orange">Coding Kids</a></li>
+                    <li><a href="#" class="hover:text-scitech-orange">IoT & Smart Home</a></li>
+                    <li><a href="#" class="hover:text-scitech-orange">Competition Class</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-4">Kemitraan</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-scitech-orange">Kerja Sama Sekolah</a></li>
+                    <li><a href="#" class="hover:text-scitech-orange">Sponsorship</a></li>
+                    <li><a href="#" class="hover:text-scitech-orange">Karir Mentor</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-4">Kontak</h4>
+                <ul class="space-y-2">
+                    <li><i class="fa-brands fa-whatsapp w-5"></i> 0878-7795-5526</li>
+                    <li><i class="fa-solid fa-envelope w-5"></i> halo@scitechacademy.id</li>
+                    <li><i class="fa-solid fa-location-dot w-5"></i> Ruko Grand Tech No. 12, Jakarta Selatan</li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+            <p>&copy; 2024 Scitech Academy Indonesia. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/6287877955526" class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-2xl z-50 flex items-center justify-center transition transform hover:scale-110" target="_blank" title="Chat WhatsApp">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+</body>
+</html>
